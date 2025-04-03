@@ -1,6 +1,6 @@
 # School Management System (SchoolLink)
 
-https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/480783982_122111503196747621_7224930966526580307_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGbqnFhQ-6XpbKdomz7Fv6b9SMnBFHIIub1IycEUcgi5uT6QiF7JJU0XGDKhtlMB9fNLEupaaScDOe5bZmIRQeN&_nc_ohc=yBzO6vhBtrQQ7kNvwE5XD4i&_nc_oc=AdlzPLHVxaDDJJF7MK2W_OezJ6p9pKIgmu-bQmFO3QqH4tcsCLqaNnS5fK1nmZQ2f7s&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=TuXyqWS3f5vQFnPCbuhQdQ&oh=00_AYHWBV_yAUgwZlEBVKyrP5NyGF6WdqTmliqSYSSt3-mUOQ&oe=67F4973C 
+![SchoolLink Developers Logo](https://scontent.flhe13-1.fna.fbcdn.net/v/t39.30808-6/480783982_122111503196747621_7224930966526580307_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGbqnFhQ-6XpbKdomz7Fv6b9SMnBFHIIub1IycEUcgi5uT6QiF7JJU0XGDKhtlMB9fNLEupaaScDOe5bZmIRQeN&_nc_ohc=yBzO6vhBtrQQ7kNvwE5XD4i&_nc_oc=AdlzPLHVxaDDJJF7MK2W_OezJ6p9pKIgmu-bQmFO3QqH4tcsCLqaNnS5fK1nmZQ2f7s&_nc_zt=23&_nc_ht=scontent.flhe13-1.fna&_nc_gid=TuXyqWS3f5vQFnPCbuhQdQ&oh=00_AYHWBV_yAUgwZlEBVKyrP5NyGF6WdqTmliqSYSSt3-mUOQ&oe=67F4973C) 
 
 A comprehensive web application to manage school operations and enhance communication between administrators, teachers, students, and parents.
 
