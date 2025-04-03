@@ -1,0 +1,228 @@
+/* Global Styles */
+:root {
+  --primary-color: #1E3A8A;
+  --secondary-color: #F97316;
+  --gradient-text: linear-gradient(45deg, #1E3A8A, #F97316);
+  --text-color: #fff;
+  --bg-color: #121212;
+  --shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease-in-out;
+  --gradient-text: linear-gradient(90deg, #1e3a8a, #f97316);
+}
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  display: inline-block;
+  background: var(--gradient-text);
+  background-clip: text;             
+  -webkit-background-clip: text;     
+  -webkit-text-fill-color:rgba(0, 0, 0, 0.95);
+  color: black;                      
+}
+
+/* Hero Section */
+.hero {
+  background: url("https://i.pinimg.com/736x/54/86/e5/5486e5035c9ece0fdcab0b75c423adfe.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+.hero-overlay {
+  position: relative;
+  max-width: 700px;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background: var(--primary-color);
+}
+
+/* Panels */
+.panels {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.panels-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1100px;
+  width: 100%;
+  justify-content: center;
+}
+
+.panel {
+  background: linear-gradient(135deg, #1E3A8A, #F97316);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: var(--transition);
+  width: 300px;
+  min-height: 180px;
+}
+
+.panel:hover {
+  transform: translateY(-10px);
+}
+
+.panel-icon {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  background: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+}
+
+.footer-socials span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.footer-socials a {
+  color: var(--text-color);
+  margin: 0 10px;
+  font-size: 20px;
+  transition: var(--transition);
+}
+
+.footer-socials a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-center {
+  flex: 1;
+  text-align: center;
+}
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center Content Properly */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Fix Hero Section Alignment */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fix Panel Layout */
+.panels-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Ensure Panels Stay Within Bounds */
+.panel {
+  width: 300px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Fix Footer Spacing */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #111;
+  color: white;
+  width: 100vw;
+}
+.footer-socials{
+  padding: 0 0px;
+}

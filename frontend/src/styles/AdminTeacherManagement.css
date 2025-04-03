@@ -1,0 +1,234 @@
+/* General Styles */
+.admin-teacher-management {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add a subtle background animation */
+.admin-teacher-management::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 10s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Navbar Styles */
+.admin-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 15px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  z-index: 1000;
+  padding: 200px;
+}
+
+.admin-nav h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.admin-nav a:hover {
+  color: #00d4ff;
+}
+
+/* Content Styles */
+.content {
+  margin-top: 150px;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.content h3 {
+  font-size: 2rem;
+  padding: 30px 0px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Table Wrapper for Horizontal Scrolling on Small Screens */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Styles */
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  color: white;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.3), rgba(249, 115, 22, 0.3));
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #00d4ff;
+}
+
+td {
+  font-weight: 400;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    margin-top: 160px; /* Adjusted for slightly smaller screens */
+  }
+
+  th, td {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .admin-nav a {
+    margin: 5px 0;
+  }
+
+  .content {
+    margin-top: 180px; /* Increased to account for stacked navbar */
+  }
+
+  .content h3 {
+    font-size: 1.8rem;
+  }
+
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-nav a {
+    font-size: 0.95rem;
+  }
+
+  .content {
+    margin-top: 200px; /* Further increased for very small screens */
+  }
+
+  .content h3 {
+    font-size: 1.5rem;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .teacher-table {
+    min-width: 400px; /* Ensure table doesn't shrink too much */
+  }
+}

@@ -1,0 +1,363 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-panel {
+  min-height: 100vh; 
+  width: 100vw;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add a subtle background animation */
+.admin-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 10s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Navbar Styles */
+.admin-nav {
+  position: fixed; /* Fix the navbar to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 15px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.admin-nav h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.admin-nav a:hover {
+  color: #00d4ff;
+}
+
+.admin-nav .logout-btn {
+  background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+  transition: all 0.3s ease;
+}
+
+.admin-nav .logout-btn:hover {
+  background: linear-gradient(90deg, #e63939, #ff4f4f);
+  box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
+}
+
+.logout-icon {
+  font-size: 1.2rem;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  margin-top: 120px; /* Increased margin to prevent overlap with fixed navbar */
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  z-index: 1;
+}
+
+/* Stats Cards */
+.stats {
+  display: flex;
+  flex-direction: row; /* Place cards in a row */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  /* padding: 20px 0px; */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  width: 300px; /* Fixed width for uniformity */
+  height: 100px;
+  z-index: 1; /* Ensure cards are above background */
+  /* padding: 200px 10px; */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.card-content {
+  flex: 1;
+  text-align: left;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 500;
+}
+
+.card span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00d4ff; /* Solid color instead of gradient */
+}
+
+/* Remove gradient classes */
+.student-card span,
+.teacher-card span,
+.parent-card span {
+  background: none;
+  -webkit-text-fill-color: #00d4ff; /* Ensure solid color is applied */
+}
+
+/* Clock Wrapper */
+.clock-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Notifications */
+.notifications {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.notifications h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification-icon {
+  font-size: 1.5rem;
+  color: #00d4ff;
+}
+
+.notification-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-left: 4px solid #00d4ff;
+  transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.notifications p {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .stats {
+    flex-direction: row; /* Keep row layout but allow wrapping */
+    justify-content: center;
+  }
+
+  .card {
+    width: 250px; /* Slightly smaller cards on medium screens */
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 0; /* Remove border-radius on smaller screens */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .admin-nav a {
+    margin: 5px 0;
+  }
+
+  .admin-nav .logout-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .dashboard {
+    margin-top: 150px; /* Increased margin for stacked navbar */
+  }
+
+  .stats {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .notifications,
+  .clock-wrapper {
+    max-width: 90%;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card span {
+    font-size: 1.6rem;
+  }
+
+  .card-icon {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-nav a,
+  .admin-nav .logout-btn {
+    font-size: 0.95rem;
+  }
+
+  .dashboard {
+    margin-top: 180px; /* Further increased margin for very small screens */
+  }
+
+  .card {
+    height: 80px;
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card span {
+    font-size: 1.4rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .notifications h3 {
+    font-size: 1.3rem;
+  }
+
+  .notification-item {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}

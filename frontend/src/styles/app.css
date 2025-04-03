@@ -1,0 +1,135 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Full-Width and Full-Height Layout === */
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+/* === Full-Screen Page Wrapper === */
+.page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* === Full-Screen Sections === */
+.section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* === Full-Screen Containers === */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Navigation Bar Styling (Full-Width) === */
+.navbar {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+/* === Buttons (Consistent Across All Pages) === */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: darkred;
+}
+
+/* === Full-Width Authentication Section === */
+.auth-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container, .register-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #222;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* === Full-Width Admin Panel === */
+.admin-panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-content {
+  width: 90vw;
+  height: 90vh;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .container, .admin-content {
+    width: 95vw;
+    height: 95vh;
+    padding: 15px;
+  }
+
+  .login-container, .register-container {
+    width: 90vw;
+  }
+}

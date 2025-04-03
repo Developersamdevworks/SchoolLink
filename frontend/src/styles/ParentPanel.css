@@ -1,0 +1,296 @@
+/* General Styles */
+.parent-panel {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #1a1a3d, #2a2a5e, #3a3a7d);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Remove the background animation for a cleaner look */
+.parent-panel::before {
+  display: none;
+}
+
+/* Navbar Styles */
+.parent-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1000;
+}
+
+.parent-nav h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.parent-nav button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+
+.parent-nav button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #00d4ff;
+}
+
+.parent-nav button.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #00d4ff;
+}
+
+.parent-nav .logout-btn {
+  background: #ff4d4d;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.parent-nav .logout-btn:hover {
+  background: #e63939;
+}
+
+/* Parent Info Styles */
+.parent-info {
+  width: 100%;
+  max-width: 600px;
+  margin: 80px 0 20px 0;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-3px);
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  margin: 5px 0;
+}
+
+/* Content Grid Styles - Vertical Column */
+.content-grid {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100px; /* Minimum height for empty cards */
+  height: auto; /* Allow height to grow with content */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon Styles for Card Titles */
+.card-icon {
+  color: #00d4ff;
+  font-size: 1.3rem;
+}
+
+/* List View for Card Content */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  word-break: break-word;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+.card li strong {
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+/* Add a subtle icon before each list item */
+.card li::before {
+  content: '✇'; /* Using a bell emoji to match the Notifications card */
+  color: #00d4ff;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Clock Card Specific Styles */
+.card:last-child {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* Loading, Error, and No Data Styles */
+.loading, .error, .no-data {
+  color: #e0e0e0;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parent-nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .parent-nav h1 {
+    font-size: 1.3rem;
+  }
+
+  .parent-nav button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .parent-nav .logout-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .parent-info {
+    margin-top: 120px;
+  }
+
+  .info-box {
+    padding: 12px;
+  }
+
+  .info-box p {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card li {
+    font-size: 0.9rem;
+  }
+
+  .card-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent-nav h1 {
+    font-size: 1.2rem;
+  }
+
+  .parent-nav button {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .parent-nav .logout-btn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .parent-info {
+    margin-top: 140px;
+  }
+
+  .info-box {
+    padding: 10px;
+  }
+
+  .info-box p {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card li {
+    font-size: 0.85rem;
+  }
+
+  .card-icon {
+    font-size: 1.1rem;
+  }
+}

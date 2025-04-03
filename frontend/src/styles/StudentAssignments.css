@@ -1,0 +1,219 @@
+/* StudentAssignments.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .student-assignments {
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Navigation */
+  .student-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .student-nav h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .student-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .student-nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+  }
+  
+  /* Assignment List */
+  .assignment-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  /* Assignment Card */
+  .assignment {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 800px; /* Centered card with max-width for larger screens */
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .assignment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .assignment h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+  }
+  
+  .assignment p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    line-height: 1.4;
+  }
+  
+  .assignment input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.3s ease;
+  }
+  
+  .assignment input::placeholder {
+    color: #b0b0b0;
+  }
+  
+  .assignment input:focus {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .assignment button {
+    background: #ff4d4d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .assignment button:hover {
+    background: #e63939;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .student-nav {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px 20px;
+    }
+  
+    .student-nav h1 {
+      font-size: 1.6rem;
+    }
+  
+    .student-nav a {
+      font-size: 1rem;
+      padding: 6px 12px;
+    }
+  
+    .assignment-list {
+      padding: 0 15px;
+    }
+  
+    .assignment {
+      padding: 20px;
+    }
+  
+    .assignment h3 {
+      font-size: 1.4rem;
+    }
+  
+    .assignment p {
+      font-size: 1rem;
+    }
+  
+    .assignment input {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .assignment button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .student-assignments {
+      padding: 15px;
+    }
+  
+    .student-nav {
+      padding: 10px 15px;
+    }
+  
+    .student-nav h1 {
+      font-size: 1.4rem;
+    }
+  
+    .student-nav a {
+      font-size: 0.9rem;
+      padding: 5px 10px;
+    }
+  
+    .assignment-list {
+      padding: 0 10px;
+    }
+  
+    .assignment {
+      padding: 15px;
+    }
+  
+    .assignment h3 {
+      font-size: 1.2rem;
+    }
+  
+    .assignment p {
+      font-size: 0.9rem;
+    }
+  
+    .assignment input {
+      font-size: 0.85rem;
+      padding: 6px;
+    }
+  
+    .assignment button {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+  }

@@ -1,0 +1,320 @@
+/* General Styles */
+.teacher-panel {
+  min-height: 100vh;
+  width: 100vw; /* Full viewport width */
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add a subtle background animation */
+.teacher-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 10s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Loading and Error Styles */
+.teacher-loading, .teacher-error {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Navbar Styles */
+.teacher-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 15px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  z-index: 1000;
+}
+
+.teacher-nav h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.teacher-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.teacher-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.teacher-nav a:hover {
+  color: #00d4ff;
+}
+
+.teacher-nav-icon {
+  font-size: 1.2rem;
+}
+
+.teacher-nav .teacher-logout-btn {
+  background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+  transition: all 0.3s ease;
+}
+
+.teacher-nav .teacher-logout-btn:hover {
+  background: linear-gradient(90deg, #e63939, #ff4f4f);
+  box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
+}
+
+.teacher-logout-icon {
+  font-size: 1.2rem;
+}
+
+/* Dashboard Styles */
+.teacher-dashboard {
+  margin-top: 150px; /* Increased to prevent overlap with fixed navbar */
+  width: 100%;
+  max-width: 600px; /* Reduced max-width for a more compact vertical layout */
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px;
+  align-items: center; /* Center the cards vertically */
+  z-index: 1;
+}
+
+/* Card Styles */
+.teacher-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 500px; /* Adjusted for a wider card in vertical layout */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.teacher-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.teacher-card-icon {
+  font-size: 1.8rem;
+  color: #00d4ff;
+}
+
+.teacher-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.teacher-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 5px 0;
+}
+
+/* Specific Card Adjustments */
+.teacher-assignment-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #00d4ff;
+}
+
+.teacher-notification-card {
+  min-height: 150px; /* Minimum height to ensure consistency */
+}
+
+.teacher-notification-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #00d4ff;
+  transition: all 0.3s ease;
+  margin: 5px 0; /* Added margin for better spacing between notifications */
+  font-size: 1rem;
+  line-height: 1.5; /* Improved readability */
+  word-break: break-word; /* Ensure long messages wrap properly */
+}
+
+.teacher-notification-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.teacher-clock-card {
+  width: 100%;
+  max-width: 500px; /* Match the width of other cards */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .teacher-dashboard {
+    margin-top: 160px;
+  }
+
+  .teacher-card {
+    max-width: 450px;
+  }
+
+  .teacher-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .teacher-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher-nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 0;
+  }
+
+  .teacher-nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .teacher-nav a {
+    margin: 5px 0;
+  }
+
+  .teacher-nav .teacher-logout-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .teacher-dashboard {
+    margin-top: 180px;
+  }
+
+  .teacher-card {
+    max-width: 90%;
+  }
+
+  .teacher-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .teacher-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .teacher-nav a, .teacher-nav .teacher-logout-btn {
+    font-size: 0.95rem;
+  }
+
+  .teacher-nav-icon, .teacher-logout-icon {
+    font-size: 1.1rem;
+  }
+
+  .teacher-dashboard {
+    margin-top: 200px;
+  }
+
+  .teacher-card {
+    min-height: 120px;
+    max-width: 90%;
+  }
+
+  .teacher-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .teacher-card p {
+    font-size: 0.85rem;
+  }
+
+  .teacher-card-icon {
+    font-size: 1.5rem;
+  }
+
+  .teacher-notification-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}

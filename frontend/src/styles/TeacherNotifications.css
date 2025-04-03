@@ -1,0 +1,398 @@
+/* General Styles */
+.teacher-notifications {
+  min-height: 100vh;
+  width: 100vw; /* Full viewport width */
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add a subtle background animation */
+.teacher-notifications::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 10s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Navbar Styles */
+.teacher-notifications-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 15px 30px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  z-index: 1000;
+}
+
+.teacher-notifications-nav h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.teacher-notifications-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.teacher-notifications-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.teacher-notifications-nav a:hover {
+  color: #00d4ff;
+}
+
+.teacher-notifications-nav-icon {
+  font-size: 1.2rem;
+}
+
+.teacher-notifications-nav .teacher-notifications-logout-btn {
+  background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+  transition: all 0.3s ease;
+}
+
+.teacher-notifications-nav .teacher-notifications-logout-btn:hover {
+  background: linear-gradient(90deg, #e63939, #ff4f4f);
+  box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
+}
+
+.teacher-notifications-logout-icon {
+  font-size: 1.2rem;
+}
+
+/* Content Styles */
+.teacher-notifications-content {
+  margin-top: 150px; /* Increased to prevent overlap with fixed navbar */
+  width: 100%;
+  max-width: 800px; /* Adjusted for a more compact layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.teacher-notifications-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #1e3a8a, #f97316);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Notification Form Styles */
+.teacher-notification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.teacher-notification-form input {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.teacher-notification-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.teacher-notification-form input:focus {
+  outline: none;
+  border-color: #00d4ff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.teacher-notification-form .teacher-notification-send-btn {
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.teacher-notification-send-icon {
+  font-size: 1.2rem;
+}
+
+/* Notifications List Styles */
+.teacher-notifications-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.teacher-notification-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.teacher-notification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.teacher-notification-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 5px 0;
+  word-break: break-word; /* Ensure long messages wrap properly */
+}
+
+.teacher-notification-card span {
+  font-size: 0.95rem;
+  color: #00d4ff;
+}
+
+.teacher-notification-card .teacher-notification-delete-btn {
+  background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.teacher-notification-delete-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .teacher-notifications-content {
+    margin-top: 160px;
+  }
+
+  .teacher-notification-form {
+    padding: 15px;
+  }
+
+  .teacher-notification-card p {
+    font-size: 0.95rem;
+  }
+
+  .teacher-notification-card span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher-notifications-nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 0;
+  }
+
+  .teacher-notifications-nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .teacher-notifications-nav a {
+    margin: 5px 0;
+  }
+
+  .teacher-notifications-nav .teacher-notifications-logout-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .teacher-notifications-content {
+    margin-top: 180px;
+  }
+
+  .teacher-notifications-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .teacher-notification-form {
+    padding: 15px;
+  }
+
+  .teacher-notification-form input {
+    padding: 10px;
+  }
+
+  .teacher-notification-form .teacher-notification-send-btn {
+    padding: 10px 20px;
+  }
+
+  .teacher-notification-card {
+    padding: 15px;
+  }
+
+  .teacher-notification-card p {
+    font-size: 0.9rem;
+  }
+
+  .teacher-notification-card span {
+    font-size: 0.85rem;
+  }
+
+  .teacher-notification-card .teacher-notification-delete-btn {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-notifications-nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .teacher-notifications-nav a, .teacher-notifications-nav .teacher-notifications-logout-btn {
+    font-size: 0.95rem;
+  }
+
+  .teacher-notifications-nav-icon, .teacher-notifications-logout-icon {
+    font-size: 1.1rem;
+  }
+
+  .teacher-notifications-content {
+    margin-top: 200px;
+  }
+
+  .teacher-notifications-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .teacher-notification-form {
+    padding: 10px;
+  }
+
+  .teacher-notification-form input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .teacher-notification-form .teacher-notification-send-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .teacher-notification-card {
+    padding: 12px;
+  }
+
+  .teacher-notification-card p {
+    font-size: 0.85rem;
+  }
+
+  .teacher-notification-card span {
+    font-size: 0.8rem;
+  }
+
+  .teacher-notification-card .teacher-notification-delete-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .teacher-notification-delete-icon {
+    font-size: 1rem;
+  }
+}

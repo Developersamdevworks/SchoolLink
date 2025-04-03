@@ -1,0 +1,318 @@
+/* StudentPanel.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .student-panel {
+    min-height: 100vh;
+    /* background-color: #218838; */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  /* Navigation */
+  .student-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .student-nav h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .student-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .student-nav a:hover {
+    color: #ffd700;
+  }
+  
+  .logout-btn {
+    background: #ff4d4d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: #e63939;
+  }
+  
+  /* Content */
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  /* Cards */
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+  }
+  
+  .card-icon {
+    font-size: 1.6rem;
+  }
+  
+  .card-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #e0e0e0;
+    transition: background 0.3s ease;
+  }
+  
+  .card-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .card-item-title {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  .card-item-due,
+  .card-item-source,
+  .card-item-value {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+  }
+  
+  .card-item-content {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    line-height: 1.4;
+    margin-top: 5px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  .card-item.no-data {
+    font-size: 1.1rem;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 12px;
+  }
+  
+  /* Attendance Status */
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+  }
+  
+  .status.present {
+    color: #28a745;
+  }
+  
+  .status.absent {
+    color: #dc3545;
+  }
+  
+  .mark-attendance-btn {
+    background: #28a745;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: center;
+    margin-top: 15px;
+  }
+  
+  .mark-attendance-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+  }
+  
+  .mark-attendance-btn:hover:not(:disabled) {
+    background: #218838;
+  }
+  
+  /* Clock */
+  .clock-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .student-nav {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px 20px;
+    }
+  
+    .student-nav h1 {
+      font-size: 1.6rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .student-nav a {
+      font-size: 1rem;
+    }
+  
+    .logout-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .card {
+      padding: 20px;
+    }
+  
+    .card h3 {
+      font-size: 1.4rem;
+    }
+  
+    .card-item {
+      font-size: 1rem;
+    }
+  
+    .card-item-title,
+    .card-item-due,
+    .card-item-source,
+    .card-item-value,
+    .card-item-content {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .student-panel {
+      padding: 15px;
+    }
+  
+    .student-nav {
+      padding: 10px 15px;
+    }
+  
+    .student-nav h1 {
+      font-size: 1.4rem;
+    }
+  
+    .student-nav a {
+      font-size: 0.9rem;
+    }
+  
+    .logout-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  
+    .content {
+      padding: 0 10px;
+    }
+  
+    .card {
+      padding: 15px;
+    }
+  
+    .card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card-item {
+      font-size: 0.9rem;
+    }
+  
+    .card-item-title,
+    .card-item-due,
+    .card-item-source,
+    .card-item-value,
+    .card-item-content {
+      font-size: 0.85rem;
+    }
+  
+    .mark-attendance-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }

@@ -1,0 +1,35 @@
+.clock {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.2), rgba(249, 115, 22, 0.2));
+  transition: all 0.3s ease;
+}
+
+.clock:hover {
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.3), rgba(249, 115, 22, 0.3));
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clock {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clock {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
